@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SQL</title>
+</head>
+<body>
+    <h1>SQL QUERY</h1>
+    <div class="card-wrapper">
+        <div class="card">
+            SELECT *  <br>
+            FROM students <br>
+            WHERE date_of_birth >= '1990-01-01' AND date_of_birth < '1991-01-01' 
+        </div>
+        <div class="card">SELECT *  <br>
+            FROM courses <br>
+            WHERE cfu > 10</div>
+        <div class="card">SELECT * <br>
+            FROM students <br>
+            WHERE date_of_birth <= '1993-01-01'</div>
+        <div class="card">SELECT * <br>
+            FROM courses <br>
+            WHERE period = 'I semestre' <br>
+            AND year = 1
+            </div>
+        <div class="card">SELECT * <br>
+            FROM degrees <br>
+            WHERE level ='magistrale'</div>
+        <div class="card">SELECT COUNT(*) <br>
+            FROM departments</div> <br>
+        <div class="card">SELECT COUNT(teacher_id) <br>
+            FROM teachers <br>
+            WHERE office_number IS NOT NULL</div>
+        <div class="card">INSERT INTO students
+            (52, 244, 'Andrea', 'Gulli', '2004-09-23', 'GLLNDR04P23B111I', '2022-11-15', '69220034', 'andreagulli11@gmail.com'),</div>
+        <div class="card">UPDATE teachers
+            SET office_number = 126
+            WHERE id = 58</div>
+        <div class="card">DELETE FROM students
+            WHERE id = 52</div>
+    </div>
+    
+</body>
+</html>
