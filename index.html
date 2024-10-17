@@ -37,10 +37,57 @@
             (52, 244, 'Andrea', 'Gulli', '2004-09-23', 'GLLNDR04P23B111I', '2022-11-15', '69220034', 'andreagulli11@gmail.com'),</div>
         <div class="card">UPDATE teachers
             SET office_number = 126
-            WHERE id = 58</div>
-        <div class="card">DELETE FROM students
-            WHERE id = 52</div>
-    </div>
-    
-</body>
-</html>
+            WHERE id = 58
+        </div>
+            <div class="card">DELETE FROM students
+                WHERE id = 52
+            </div>
+        </div>
+            <div class="inner-join">
+                <H2 style="width: 100%; font-size: 40px; color: white; text-align: center;">INNER JOIN</H2>
+                    <div class="card">SELECT * 
+                        FROM `students`
+                        INNER JOIN degrees ON degree_id = students.degree_id 
+                        WHERE degree_id = 4;                     
+                    </div>
+                    <div class="card">
+                        SELECT * 
+                        FROM departments
+                        INNER JOIN degrees ON departments.id = departments.id
+                        WHERE departments.id = 7
+                        AND LEVEL = 'magistrale'
+                    </div>
+                    <div class="card">
+                        SELECT * 
+                        FROM teachers
+                        INNER JOIN course_teacher ON teachers.id
+                        INNER JOIN courses ON course_teacher.course_id = courses.id
+                        WHERE course_teacher.teacher_id = 44
+                    </div>
+                    <div class="card">
+                        SELECT * 
+                        FROM students
+                        INNER JOIN degrees ON students.degree_id = degrees.id
+                        INNER JOIN departments ON departments.id = degrees.department_id
+                        ORDER BY students.name ASC
+                    </div>
+                    <div class="card">
+                        SELECT *
+                        FROM course_teacher
+                        INNER JOIN teachers ON course_teacher.teacher_id = teachers.id
+                        INNER JOIN courses ON courses.id = course_teacher.course_id
+                    </div>
+                    <div class="card">
+                        SELECT *
+                        FROM teachers
+                        INNER JOIN course_teacher ON course_teacher.teacher_id = teachers.id
+                        INNER JOIN courses ON course_teacher.course_id = courses.id
+                        INNER JOIN degrees ON courses.degree_id = degrees.id
+                        INNER JOIN departments ON degrees.department_id = departments.id
+                        AND departments.name = 'dipartimento di matematica'
+                    </div>
+                </div>
+
+           
+        </body>
+        </html>

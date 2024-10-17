@@ -4,7 +4,7 @@ body{
 
 .card-wrapper{
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1200px;
 
     display: flex;
     justify-content: center;
@@ -13,8 +13,8 @@ body{
 }
 
 .card{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    min-height: 200px;
 
     padding: 10px;
 
@@ -65,4 +65,15 @@ h1{
     font-size: 50px;
     color: white;
     text-shadow: 1px 1px 5px #fff;
+}
+
+.inner-join{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner-join .card{
+    margin: 0 auto;
+    padding: 20px;
+    width: 450px;
 }

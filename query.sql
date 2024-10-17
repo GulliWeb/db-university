@@ -46,4 +46,47 @@ WHERE id = 58;
 DELETE FROM students
 WHERE id = 52
 
+/* QUERY INNER JOIN 
+1 */
+SELECT * 
+FROM `students`
+INNER JOIN degrees ON degree_id = students.degree_id 
+WHERE degree_id = 4; 
+
+/* 2 */
+SELECT * 
+FROM departments
+INNER JOIN degrees ON departments.id = departments.id
+WHERE departments.id = 7
+AND LEVEL = 'magistrale'
+
+/* 3 */
+SELECT * 
+FROM teachers
+INNER JOIN course_teacher ON teachers.id
+INNER JOIN courses ON course_teacher.course_id = courses.id
+WHERE course_teacher.teacher_id = 44
+
+/* 4 */
+SELECT * 
+FROM students
+INNER JOIN degrees ON students.degree_id = degrees.id
+INNER JOIN departments ON departments.id = degrees.department_id
+ORDER BY students.name ASC
+
+/* 5 */
+SELECT *
+FROM course_teacher
+INNER JOIN teachers ON course_teacher.teacher_id = teachers.id
+INNER JOIN courses ON courses.id = course_teacher.course_id
+
+/* 6 */
+SELECT *
+FROM teachers
+INNER JOIN course_teacher ON course_teacher.teacher_id = teachers.id
+INNER JOIN courses ON course_teacher.course_id = courses.id
+INNER JOIN degrees ON courses.degree_id = degrees.id
+INNER JOIN departments ON degrees.department_id = departments.id
+AND departments.name = 'dipartimento di matematica'
+
 
