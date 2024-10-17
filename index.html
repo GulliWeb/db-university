@@ -99,9 +99,12 @@
                         FROM teachers
                         GROUP BY teachers.office_number
                     </div>
-
+                    <div class="card">
+                        SELECT AVG(exam_student.vote), exam_student.exam_id
+                        FROM exam_student
+                        INNER JOIN exams ON exams.id = exam_student.exam_id
+                        GROUP BY exam_student.exam_id
+                    </div>
                 </div>
-
-           
         </body>
         </html>

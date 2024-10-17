@@ -100,3 +100,9 @@ SELECT teachers.office_number, COUNT(*) as teachers_in_this_office
 FROM teachers
 GROUP BY teachers.office_number
 
+/* 3 */
+SELECT AVG(exam_student.vote), exam_student.exam_id
+FROM exam_student
+INNER JOIN exams ON exams.id = exam_student.exam_id
+GROUP BY exam_student.exam_id
+
