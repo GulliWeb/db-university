@@ -87,6 +87,20 @@
                         AND departments.name = 'dipartimento di matematica'
                     </div>
                 </div>
+                <div class="group-by">
+                    <H2 style="width: 100%; font-size: 40px; color: white; text-align: center;">GROUP BY</H2>
+                    <div class="card">
+                        SELECT YEAR(students.enrolment_date) AS anno_iscrizione, COUNT(*) AS total_students
+                        FROM students
+                        GROUP BY YEAR(students.enrolment_date)
+                    </div>
+                    <div class="card">
+                        SELECT teachers.office_number, COUNT(*) as teachers_in_this_office
+                        FROM teachers
+                        GROUP BY teachers.office_number
+                    </div>
+
+                </div>
 
            
         </body>

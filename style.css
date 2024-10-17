@@ -67,12 +67,16 @@ h1{
     text-shadow: 1px 1px 5px #fff;
 }
 
-.inner-join{
+.inner-join, .group-by{
     display: flex;
     flex-wrap: wrap;
 }
 
-.inner-join .card{
+.group-by .card{
+    width: 250px;
+}
+
+.inner-join .card, .group-by .card{
     margin: 0 auto;
     padding: 20px;
     width: 450px;

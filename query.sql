@@ -89,4 +89,14 @@ INNER JOIN degrees ON courses.degree_id = degrees.id
 INNER JOIN departments ON degrees.department_id = departments.id
 AND departments.name = 'dipartimento di matematica'
 
+/* GROUP BY */
+/* 1 */
+SELECT YEAR(students.enrolment_date) AS anno_iscrizione, COUNT(*) AS total_students
+FROM students 
+GROUP BY YEAR(students.enrolment_date)
+
+/* 2 */
+SELECT teachers.office_number, COUNT(*) as teachers_in_this_office
+FROM teachers
+GROUP BY teachers.office_number
 
